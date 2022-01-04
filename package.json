@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "json-templater": "^1.2.0",
     "lerna": "^4.0.0",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",

@@ -11,10 +11,10 @@
  * export default demo
  */
 
-const fs=require('fs');
-const path=require('path');
-var endOfLine = require('os').EOL;
-const render = require('json-templater/string');
+const fs = require('fs')
+const path = require('path')
+var endOfLine = require('os').EOL; // ???
+const render = require('json-templater/string'); // 这个包4年没有更新
 
 const IMPORT_TEMPLATE='import {{name}} from \'./index.vue\';';
 const USE_TEMPLATE='Vue.component({{name}}, {{component}});';
@@ -26,17 +26,18 @@ const MAIN_TEMPLATE=`
 export default {{component}};
 `
 
-const files=fs.readdirSync('./packages');
+const files = fs.readdirSync('./packages');
 
-const folder =files.slice(0,-1)
+console.log('files', files)
+const folder = files.slice(0,-1)
 
-console.log(folder)
+console.log('folder', folder)
 
 
 const includeComponentTemplate = [];
 const listComponentTemplate =[];
 
-const writeFile=function(file,include,list){
+const writeFile = function ( file, include, list){
     const p=path.resolve(__dirname,`../packages/${file}/index.js`);
     fs.writeFileSync(p,render(MAIN_TEMPLATE,{
         include:include,
@@ -47,10 +48,10 @@ const writeFile=function(file,include,list){
 
 folder.forEach((item)=>{
     const include=render(IMPORT_TEMPLATE,{
-        name:item,
-        component:item,
+        name: item,
+        component: item,
     });
-    const list=render(USE_TEMPLATE,{
+    const list = render(USE_TEMPLATE,{
         name:item,
         component:item,
     });
