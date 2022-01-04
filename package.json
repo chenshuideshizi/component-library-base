@@ -1,9 +1,12 @@
 {
   "name": "root",
   "private": true,
+  "main": "src/index.js",
   "devDependencies": {
     "json-templater": "^1.2.0",
     "lerna": "^4.0.0",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.3",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.2"
@@ -12,7 +15,7 @@
     "dev": "NODE_ENV=dev webpack-dev-server --config ./config/dev.config.js",
     "build:lib": "webpack --config ./config/lib.config.js",
     "build": "NODE_ENV=prod webpack  --config ./config/prod.config.js",
-    "build:pck": "node ./config/pck.config.js",
-    "build:cp": "node ./config/index.config.js"
+    "build:package": "node ./config/package.config.js",
+    "build:component": "node ./config/component.config.js"
   }
 }

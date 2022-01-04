@@ -18,8 +18,7 @@ const render = require('json-templater/string'); // 这个包4年没有更新
 
 const IMPORT_TEMPLATE='import {{name}} from \'./index.vue\';';
 const USE_TEMPLATE='Vue.component({{name}}, {{component}});';
-const MAIN_TEMPLATE=`
-{{include}}
+const MAIN_TEMPLATE=`{{include}}
 {{component}}.install = function (Vue) {
     {{list}}
 };
