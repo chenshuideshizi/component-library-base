@@ -3,15 +3,9 @@
 // css的转换
 // 配置别名
 // 图片处理之类
+const path = require('path')
 
 module.exports = {
-    entry: {
-        app: 'example/src/main.js'
-    },
-    output: {
-        filename: '',
-        outpath: ''
-    },
     module: {
         rules: [
             {

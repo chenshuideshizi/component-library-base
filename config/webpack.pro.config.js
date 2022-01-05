@@ -1,11 +1,14 @@
 const path  = require('path')
+const resolve = (p) => path.resolve(__dirname, '../example', p)
 
 module.exports =  merge(common, {
     mode: 'production',
-    entry: path.resolve(__driname, '../example/app.js'),
+    entry: {
+        app: 'example/src/main.js'
+    },
     output: {
         filename: 'js/[name]-[hash].js',
-        path: path.resolve(__dirname, '../dist')
+        path: resolve('./dist')
     },
     module: {
         rules: []
