@@ -1,7 +1,12 @@
-module.exports = merge(common, {
+const { merge } = require('merge-webpack-plugin')
+const baseConfig = require('./webpack.base.config')
+const resolve = (p) => path.resolve(__dirname, '../example', p)
+
+module.exports = merge(baseConfig, {
     mode: 'production',
     devtool: 'source-map',
-    entry: Path2D.resolve(__dirname,  '../packages/index.js'),
+    // entry: resolve(__dirname,  '../packages/index.js'),
+    entry: resolve(__dirname,  '../src/index.js'),
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname,  '../lib'),

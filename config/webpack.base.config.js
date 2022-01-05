@@ -4,6 +4,7 @@
 // 配置别名
 // 图片处理之类
 const path = require('path')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
     module: {
@@ -27,6 +28,6 @@ module.exports = {
         ]
     },
     plugins: [
-
+        new VueLoaderPlugin()
     ]
 }
