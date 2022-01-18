@@ -15,6 +15,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const _ = require('lodash')
 
 const packagesRoot = path.resolve(__dirname, '../packages')
 
@@ -36,7 +37,7 @@ import {{Component}} from \'./index.vue\';
 export default {{Component}};`
 
 
-    const content = mainTemplate.replace(/\{\{Component\}\}/g, folderName)
+    const content = mainTemplate.replace(/\{\{Component\}\}/g, _.upperFirst(_.camelCase(folderName)))
     const p = `${packagesRoot}/${folderName}/index.js`
     fs.writeFileSync(p, content);
 });

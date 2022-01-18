@@ -43,6 +43,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const _ = require('lodash')
 
 const packagesRoot = path.resolve(__dirname, '../packages')
 const rootPath = path.resolve(__dirname, '..')
@@ -73,13 +74,14 @@ export default {
     {{componentList}}
 }`
 
-const importTemplate = 'import {{Component}} from \'./packages/{{Component}}/index.vue\';';
+const importTemplate = 'import {{ComponentName}} from \'../packages/{{ComponentFolderName}}/index.vue\';';
 
 const componentList = []
 const importList = []
 folders.forEach(folderName => {
-    componentList.push(folderName)
-    importList.push(importTemplate.replace(/\{\{Component\}\}/g, folderName))
+    const componentName = _.upperFirst(_.camelCase(folderName))
+    componentList.push(componentName)
+    importList.push(importTemplate.replace(/\{\{ComponentName\}\}/g, componentName).replace(/\{\{ComponentFolderName\}\}/, folderName))
 });
 
 console.log('content', componentList.join(',\n'))

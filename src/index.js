@@ -1,13 +1,15 @@
-import demo1 from './packages/demo1/index.vue';
-import demo2 from './packages/demo2/index.vue';
-import demo3 from './packages/demo3/index.vue';
-import demo4 from './packages/demo4/index.vue';
+import Demo1 from '../packages/demo1/index.vue';
+import Demo2 from '../packages/demo2/index.vue';
+import Demo3 from '../packages/demo3/index.vue';
+import TabPane from '../packages/tab-pane/index.vue';
+import Tabs from '../packages/tabs/index.vue';
 
 const components = [
-    demo1,
-demo2,
-demo3,
-demo4
+    Demo1,
+Demo2,
+Demo3,
+TabPane,
+Tabs
 ]
  
 const install = function(Vue) {
@@ -18,8 +20,9 @@ const install = function(Vue) {
 
 export default {
     install,
-    demo1,
-demo2,
-demo3,
-demo4
+    Demo1,
+Demo2,
+Demo3,
+TabPane,
+Tabs
 }

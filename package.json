@@ -3,11 +3,13 @@
   "private": true,
   "main": "src/index.js",
   "devDependencies": {
+    "@babel/core": "^7.16.7",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
     "json-templater": "^1.2.0",
     "lerna": "^4.0.0",
+    "lodash": "^4.17.21",
     "scss-loader": "^0.0.1",
     "style-loader": "^3.3.1",
     "vue": "^2.6.14",
@@ -24,6 +26,7 @@
     "build:lib": "webpack --config ./config/webpack.lib.config.js",
     "build:example": "NODE_ENV=prod webpack  --config ./config/webpack.pro.config.js",
     "build:package": "node ./config/package.config.js",
-    "build:component": "node ./config/component.config.js"
+    "build:component": "node ./config/component.config.js",
+    "build": "npm run build:package & npm run build:component"
   }
 }

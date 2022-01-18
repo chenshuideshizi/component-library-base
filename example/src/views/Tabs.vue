@@ -1,7 +1,6 @@
 <template>
     <div>
         <h1>Tabs</h1>
-
         <div>
             <wx-tabs>
                 <wx-tabs-pane name="first" label="导航一">内容一</wx-tabs-pane>

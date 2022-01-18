@@ -1,6 +1,6 @@
 
-import demo3 from './index.vue';
-demo3.install = function (Vue) {
-    Vue.component(demo3.name, demo3);
+import Demo3 from './index.vue';
+Demo3.install = function (Vue) {
+    Vue.component(Demo3.name, Demo3);
 };
-export default demo3;
+export default Demo3;
