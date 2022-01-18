@@ -17,7 +17,7 @@ module.exports =  merge(baseConfig, {
     devServer: {
         hot: true,
         open: true,
-        port: 9999
+        port: 8087
     },
     plugins: [
         new HtmlWebpackPlugin({

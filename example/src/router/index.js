@@ -13,6 +13,12 @@ const routes = [
         name: 'Home',
         meta: { title: 'home' },
         component: () => import('@/views/Home.vue')
+    },
+    {
+        path: '/tabs',
+        name: 'Tabs',
+        meta: { title: 'tabs' },
+        component: () => import('@/views/Tabs.vue')
     }
 ]
 
