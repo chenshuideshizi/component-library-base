@@ -17,7 +17,11 @@ module.exports =  merge(baseConfig, {
     devServer: {
         hot: true,
         open: true,
-        port: 8087
+        port: 8087,
+        historyApiFallback: true,
+        static: {
+            publicPath: resolve('./dist')
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "NODE_ENV=dev webpack-dev-server --config ./config/webpack.dev.config.js",
     "build:lib": "webpack --config ./config/webpack.lib.config.js",
-    "build": "NODE_ENV=prod webpack  --config ./config/webpack.pro.config.js",
+    "build:example": "NODE_ENV=prod webpack  --config ./config/webpack.pro.config.js",
     "build:package": "node ./config/package.config.js",
     "build:component": "node ./config/component.config.js"
   }
